@@ -11,10 +11,6 @@ html, body {
     scroll-behavior: smooth;
 }
 
-body {
-
-}
-
 ::selection {
     color: orange;
 }
