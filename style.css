@@ -7,109 +7,94 @@
 html, body {
     margin: 0 auto;
     padding: 0 auto;
-    background-color: #0D1227;
     scroll-behavior: smooth;
 }
 
-::selection {
-    color: orange;
+html {
+    background: #372286;
 }
+
+canvas {
+    position: fixed !important;
+ }
 
 ::-webkit-scrollbar { 
     display: none; 
 }
 
-.deepPurple {
+.dark {
     color: #0D1227;
 }
 
-.violet {
+.mid {
+    color: #372286;
+}
+
+.light {
     color: #7D57FF;
 }
 
-.blue {
-    color: #46A8FF;
-}
-
-.pink {
-    color: #FF6BA0;
-}
-
-.orange {
-    color: #FFC26A;
-}
-
-.green {
-    color: #4FCC6B;
-}
-
 .white{
-    color: #FFF;
-}
-
-.whiteBG {
-    background-color: #FFF;
+    color: #FFFFFF;
 }
 
 h1 {
-    margin: inherit;
-    font-family: Georgia-Bold;
-    font-size: 88px;
-    line-height: 96px;
+    margin: 0 0 0 0;
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 72px;
+    line-height: 80px;
 }
 
 h2 {
-    margin: 0 0 72px 0;
-    font-family: Roboto-Bold;
-    font-size: 72px;
-    line-height: 72px;
+    margin: 0 0 48px 0;
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 64px;
 }
 
 h3 {
     margin: 0 0 24px 0;
-    font-family: Roboto-Bold;
-    font-size: 56px;
-    line-height: 72px;
-}
-
-.titleShort {
-    margin: 0 0 24px 0;
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 56px;
+    text-decoration: underline;
 }
 
 p {
-    margin: inherit;
+    margin: 0 0 0 0;
     font-family: Georgia;
-    font-size: 40px;
-    line-height: 48px;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 40px;
 }
 
-.caption {
-    margin: inherit;
-    font-family: Roboto-Regular;
-    font-size: 12px;
-    line-height: 24px;
+.pSmall {
+    margin: 0 0 0 0;
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 40px;
 }
 
 a {
     text-decoration: none;
     outline: none;
-    transition: 0.3s ease;
+    color: #FFFFFF;
 }
 
-a.blue:hover {
-    color: #46A8FF;
+a:hover {
+    text-decoration: underline;
 }
 
-a.pink:hover {
-    color: #FF6BA0;
+.shadow {
+    opacity: 0.1;
 }
 
-a.orange:hover {
-    color: #FFC26A;
-}
-
-a.green:hover {
-    color: #4FCC6B;
+a.shadow:hover {
+    opacity: 1;
 }
 
 ul {
@@ -118,7 +103,11 @@ ul {
 }
 
 section {
-    padding: 96px 64px 192px 32px;
+    padding: 0 128px 72px 32px;
+}
+
+.intro {
+    padding: 32px 128px 80px 32px;
 }
 
 .flexWrapper {
@@ -129,18 +118,18 @@ section {
 
 .column {
     width: 50%;
-    margin: 0 0 72px 0;
-    padding: 0 88px 0 0;
+    margin: 0 0 48px 0;
+    padding: 0 56px 0 0;
 }
 
-footer {
-    padding: 0 0 32px 32px;
+ul {
+    margin: 0 0 0 0;
 }
 
 .logo {
     position: fixed;
     top: 32px;
-    left: 32px;
+    right: 32px;
     z-index: 999;
     transition: 0.4s cubic-bezier(0.59,-0.01, 0.11, 0.99);
     width: 40px;
@@ -151,31 +140,10 @@ footer {
 }
 
 .underline {
-    height: 1px;
-    width: 90vw;
+    height: 4px;
+    width: inherit;
     margin: 0 0 24px 0;
     background: #FFF;
-}
-
-button {
-    margin: 48px 0 0 0;
-    font-family: Georgia-Bold;
-    font-size: 48px;
-    height: 200px;
-    width: 200px;
-    border-radius: 100%;
-    color: #FFF;
-    background-color: #7D57FF;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    transition: 0.4s cubic-bezier(0.59,-0.01, 0.11, 0.99);
-}
-
-button:hover {
-    color: #FFC26A;
-    background-color: #FF6BA0;
-    transform: rotate(150deg) scale(1.1);
 }
 
 .loadIn {
@@ -192,24 +160,7 @@ button:hover {
     100% {opacity: 1;}
 }
 
-.colorWave:hover {
-    animation-name: colorWave;
-    animation-duration: 3s;
-    animation-timing-function: ease;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
-}
-
-@keyframes colorWave {
-    0% {color: #FFC26A;}
-    25% {color: #4FCC6B;}
-    50% {color: #46A8FF;}
-    75% {color: #FF6BA0;}
-    100% {color: #FFC26A;}
-}
-
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1050px) {
     .flexWrapper {
         display: flex;
         flex-direction: column;
@@ -219,7 +170,7 @@ button:hover {
     .column {
         width: 100%;
         margin: 0 0 72px 0;
-        padding: 0 88px 0 0;
+        padding: 0 0 0 0;
     }
 
     .mobileBreak {
@@ -230,40 +181,59 @@ button:hover {
 @media only screen and (max-width: 750px) {
     h1 {
         margin: inherit;
-        font-family: Georgia-Bold;
+        font-family: Georgia;
         font-size: 40px;
         line-height: 48px;
     }
 
     h2 {
-        margin: 0 0 40px 0;
-        font-family: Roboto-Bold;
-        font-size: 40px;
+        margin: 0 0 24px 0;
+        font-family: Poppins;
+        font-size: 32px;
         line-height: 40px;
     }
 
     h3 {
         margin: 0 0 16px 0;
-        font-family: Roboto-Bold;
-        font-size: 32px;
-        line-height: 32px;
-    }
-
-    p {
-        margin: inherit;
-        font-family: Georgia;
+        font-family: Poppins;
         font-size: 24px;
         line-height: 32px;
     }
 
+    p {
+        margin: 0 0 0 0;
+        font-family: Georgia;
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .pSmall {
+        margin: 0 0 0 0;
+        font-size: 16px;
+        line-height: 48px;
+    }
+
     section {
-        padding: 96px 64px 120px 32px;
+        padding: 0px 20px 48px 20px;
+    }
+
+    .intro {
+        padding: 20px 20px 48px 20px;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .underline {
+        height: 3px;
+        margin: 0 0 10px 0;
     }
 
     .column {
         width: 100%;
-        margin: 0 0 32px 0;
-        padding: 0 88px 0 0;
+        margin: 0 0 20px 0;
+        padding: 0 0 0 0;
     }
 
     .mobileBreak {
