@@ -75,8 +75,8 @@ p {
     margin: 0 0 0 0;
     font-family: Georgia;
     font-weight: normal;
-    font-size: 24px;
-    line-height: 40px;
+    font-size: 20px;
+    line-height: 48px;
 }
 
 a {
@@ -158,6 +158,44 @@ ul {
 @keyframes loadIn {
     0% {opacity: 0;}
     100% {opacity: 1;}
+}
+
+.visual-aid {
+	display: flex;
+	align-items: center;
+	height: 32px;
+    background: #7D57FF;
+	width: 100%;
+	position: fixed;
+    bottom: 0;
+    transition: 0.2s ease;
+}
+
+.marquee {
+	overflow: hidden;
+}
+
+.marquee > * {
+	white-space: nowrap;
+	position: absolute;
+    animation: marquee 80s linear 0s infinite;
+    transition: 0.3s ease;
+}
+
+@keyframes marquee {
+	0% {
+		left: 100%;
+		transform: translateX(0%);
+	}
+	100% {
+		left: 0%;
+		transform: translateX(-100%);
+	}
+}
+
+.visual-aid:hover.marquee > *{
+	animation-play-state: paused;
+	color: #372286;
 }
 
 @media only screen and (max-width: 1050px) {
