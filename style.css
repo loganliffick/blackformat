@@ -79,27 +79,20 @@ p {
     line-height: 48px;
 }
 
-a {
+a.link {
     text-decoration: none;
     outline: none;
     color: #FFFFFF;
 }
 
-a:hover {
+a.link:hover {
     text-decoration: underline;
-}
-
-.shadow {
-    opacity: 0.1;
-}
-
-a.shadow:hover {
-    opacity: 1;
 }
 
 ul {
     list-style: none;
     padding-left: 0;
+    margin: 0 0 0 0;
 }
 
 section {
@@ -122,10 +115,6 @@ section {
     padding: 0 56px 0 0;
 }
 
-ul {
-    margin: 0 0 0 0;
-}
-
 .logo {
     position: fixed;
     top: 32px;
@@ -139,25 +128,46 @@ ul {
     transform: scale(1.1) rotate(10deg);
 }
 
+.selector {
+    position: fixed;
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 56px;
+    color: #FFFFFF;
+    transition: 0.3s ease;
+}
+  
+.one {
+    top: 96px;
+    right: 32px;
+}
+  
+.two {
+    top: 176px;
+    right: 20px;
+}
+  
+.three {
+    top: 256px;
+    right: 20px;
+}
+  
+.four {
+    top: 336px;
+    right: 20px;
+}
+  
+.active {
+    text-decoration: underline;
+    transform: rotate(45deg);
+}
+
 .underline {
     height: 4px;
     width: inherit;
     margin: 0 0 24px 0;
     background: #FFF;
-}
-
-.loadIn {
-    opacity: 0;
-    animation-name: loadIn;
-    animation-duration: 0.5s;
-    animation-delay: 0.5s;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-}
-
-@keyframes loadIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
 }
 
 .visual-aid {
@@ -193,7 +203,7 @@ ul {
 	}
 }
 
-.visual-aid:hover.marquee > *{
+.visual-aid:hover.marquee > * {
 	animation-play-state: paused;
 	color: #372286;
 }
@@ -260,6 +270,10 @@ ul {
     }
 
     .logo {
+        display: none;
+    }
+
+    .selector {
         display: none;
     }
 
