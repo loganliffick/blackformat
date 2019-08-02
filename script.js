@@ -26,31 +26,52 @@ let y;
 let col;
 let mousePos;
 let lastMousePos;
+let points = [];
+let lineLength = 30;
 
 function draw() {
-
+  clear();
   col = random(0, 255);
 
   // Get new mouse position
   mousePos.set(mouseX, mouseY);
 
-  // Set the colors for our new line
-  stroke(
-    map(mousePos.x, 0, windowWidth, 0, 255),
-    map(mousePos.y, 0, windowHeight, 0, 255),
-    180
-  );
+  for (let i = 0; i < points.length; i++) {
+    // Guard last iteration
+    if (i === points.length - 1 || points.length === 1) {
+      continue;
+    }
+
+    let thisPoint = points[i];
+    let nextPoint = points[i + 1];
+
+    // Set the colors for our new line
+    stroke(
+      map(thisPoint.x, 0, windowWidth, 0, 255),
+      map(thisPoint.y, 0, windowHeight, 0, 255),
+      180
+    );
+
+    // Shrink the line based on the position in the array
+    strokeWeight(map(i, 0, points.length, 100, 0));
+
+    line(thisPoint.x, thisPoint.y, nextPoint.x, nextPoint.y);
+  }
 
   if (lastMousePos.x !== 0 && lastMousePos.y !== 0) {
     line(mousePos.x, mousePos.y, lastMousePos.x, lastMousePos.y);
   }
 
-  if (mouseIsPressed) {
-    clear();
+  if(mousePos.x !== 0 && mousePos.y !== 0) {
+    // Add the new mouse position to our point array
+    points.unshift(mousePos.copy());
+
+    if (points.length > lineLength) {
+      // Remove the tail of our line when it gets too long
+      points.pop()
+    }
   }
 
-  // Keep track of the last position of the mouse
-  lastMousePos.set(mousePos)
 }
 
 // Waypoints //
